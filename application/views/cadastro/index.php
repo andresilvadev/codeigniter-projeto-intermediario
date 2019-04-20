@@ -1,6 +1,10 @@
-<div class="container">
-    <?php
-        echo form_open('');
+<div class="container">    
+    <?php        
+        // isset() verifica se uma váriavel é nulla ou não
+        // utilizando operador ternário para verificar se existe erros ou não
+        echo isset($messages) ? $messages : '';
+
+        echo form_open('cadastro/novo');
 
             echo form_input(array(
                 "name" => "email",
