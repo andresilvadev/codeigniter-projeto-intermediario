@@ -21,7 +21,7 @@ class Cadastro extends CI_Controller
         // param 2 = "nome de exibição"
         // param 3 = "regra de validação"
         // para passar mais de uma regra utiliza a "|"
-        $this->form_validation->set_rules('email','E-mail','required|min_length[4]|max_length[100]');
+        $this->form_validation->set_rules('email','E-mail','required|min_length[4]|max_length[100]|is_unique[usuarios]');
         $this->form_validation->set_rules('nome','Nome','required|min_length[4]|max_length[80]');
         $this->form_validation->set_rules('senha','Senha','required|min_length[6]|max_length[10]');
 

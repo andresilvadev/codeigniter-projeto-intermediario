@@ -4,13 +4,13 @@
         // utilizando operador ternário para verificar se existe erros ou não
         echo isset($messages) ? $messages : '';
 
-        echo form_open('cadastro/novo');
+        echo form_open('cadastro/novo', array("autocomplete" => "off"));
 
             echo form_input(array(
                 "name" => "email",
                 "type" => "email",
                 "class" => "form-control",
-                "placeholder" => "Insira um e-mail válido",
+                "placeholder" => "Insira um e-mail válido",                
                 "autocomplete" => "off"
             ));
 
