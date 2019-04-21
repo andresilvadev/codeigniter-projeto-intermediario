@@ -29,6 +29,11 @@ class Upload extends CI_Controller
         $this->upload->initialize($config); // initialize prepara o processo de upload
 
         if ($this->upload->do_upload('arquivo') === true) {  // do_upload recebe a variavel arquivo entre plicas, retornando true ou false
+
+            $this->load->library('zip');  // Carrega a biblioteca zip
+            $this->zip->add_data('public/upload/' .$config['file_name']); // Pega o arquivo do diretório e zipa como temporario
+            $this->zip->archive('public/upload/' . $config['file_name'] . '.zip'); // Pega o arquivo temporario e salva ele com zip
+
             $dados = array(
                 "nome" => $nome,
                 "arquivo" => $config['file_name'],
